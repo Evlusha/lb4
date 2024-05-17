@@ -29,7 +29,7 @@ void sorting2(int* arr, int b, int e) {
 		}
 	}
 }
-//Соединение 
+//Соединение
 void conect(int* arr1, int* arr2) {
 	for (int i = 0; i < n; i++) {
 		if (i >= 0 && i <= 5) {
@@ -54,7 +54,7 @@ void conclusion(int arr[]) {
 void sieveEratosthenes(vector<int>& numberProst) {
 	numberProst.push_back(2);
 	//Поставила до 30 тк иначе ничего бы не вывело
-	for (int i = 3; i <= 30; i++)
+	for (int i = 3; i <= 29; i++)
 	{
 		int k = 0;
 		for (int j = 0; j < numberProst.size(); j++) {
@@ -66,7 +66,7 @@ void sieveEratosthenes(vector<int>& numberProst) {
 	}
 }
 //Проверка
-void examination(int arr[], vector<int> numberProst) {
+void examination(int arr[], vector<int>& numberProst) {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < numberProst.size(); j++) {
 			if (arr[i] == numberProst[j]) {
@@ -122,7 +122,7 @@ int main() {
 	SetConsoleOutputCP(1251);
 	int arr1[n];
 	int arr2[n];
-	ranlux24_base ran;
+	ranlux24_base ran(random_device{}());
 	uniform_int_distribution<> dist(10, 100);
 
 	//1 задание
@@ -167,7 +167,7 @@ int main() {
 
 	// 4 задание
 	char str[n];
-	ranlux24_base rand1;
+	ranlux24_base rand1(random_device{}());
 	uniform_int_distribution <> distr('A', 'z');
 	char symbol;
 	for (int i = 0; i < n; i++) {
@@ -186,7 +186,7 @@ int main() {
 
 	// 5 задание
 	int arr3[n];
-	ranlux24_base sluch;
+	ranlux24_base sluch(random_device{}());
 	uniform_int_distribution<> dist_sl(1000, 2000);
 	for (int i = 0; i < n; i++) {
 		arr3[i] = dist_sl(sluch);
